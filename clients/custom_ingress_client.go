@@ -27,7 +27,7 @@ func (bs *customIngressClient) Get(name string, opts metav1.GetOptions) (*v1alph
 	err := bs.restClient.
 		Get().
 		Namespace(bs.namespace).
-		Resource("entandobundlev2s").
+		Resource("customingresses").
 		Name(name).
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Do(context.TODO()).
@@ -41,7 +41,7 @@ func (bs *customIngressClient) List(opts metav1.ListOptions) (*v1alpha1.CustomIn
 	err := bs.restClient.
 		Get().
 		Namespace(bs.namespace).
-		Resource("entandobundlev2s").
+		Resource("customingresses").
 		VersionedParams(&opts, scheme.ParameterCodec).
 		Do(context.TODO()).
 		Into(&result)
